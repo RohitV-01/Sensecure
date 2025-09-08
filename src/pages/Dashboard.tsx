@@ -1,11 +1,13 @@
 // src/pages/Dashboard.tsx
-// import React from "react";
 import Navbar from "../components/navbar";
 import Footer from "components/Footer";
 import { useEffect, useState } from "react";
 import ContactModal from "components/ContactModal";
 import HeroSection from "components/HeroSection";
 import FeaturesSection from "components/FeaturesSection";
+import SolutionsSection from "components/SolutionsSection";
+import UploadSection from "components/UploadSection";
+import EndToEndSecuritySection from "components/EndToEndSecuritySection";
 
 const Dashboard = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,9 +37,15 @@ const Dashboard = () => {
       
       {/* Hero Video Section */}
       <HeroSection />
+
       {/* Feature section  */}
       <FeaturesSection />
 
+      {/* End to End Security Section  */}
+      <EndToEndSecuritySection/>
+
+      {/* Solution Section  */}
+      <SolutionsSection/>
       
 
       <Footer />
