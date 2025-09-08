@@ -8,31 +8,31 @@ import House_with_shield from "../assets/house_with_shield.svg";
 const HeroSection: React.FC = () => {
   return (
     <section >
-      <div className="w-full flex flex-col items-center gap-12 px-6 lg:px-24 py-24"
+      <div className="w-full flex flex-col items-center gap-12 px-6 lg:px-24 pt-24"
             style={{
             backgroundImage: `url(${heroImage})`,
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundSize: "cover", // prevents stretching to fit
+            backgroundPosition: "bottom",
+            backgroundSize: "cover",
           }}>
       {/* Feature Bar */}
-      <div className="flex flex-wrap justify-center items-center  lg:gap-9 px-8 py-2 bg-slate-50 rounded-full shadow-md border border-slate-300 lg:w-[498px] lg:max-h-{48px}">
+      <div className="flex flex-wrap justify-center items-center  lg:gap-9 px-8 py-2 bg-slate-50 rounded-full shadow-md border border-slate-300 w-[400px] lg:w-[498px] lg:max-h-{48px}">
         <div className="flex items-center gap-2">
-          <img src={House_with_shield} alt="" />
+          <img src={House_with_shield} alt="" className="gap-1" />
           <span className="text-zinc-600 text-lg font-medium font-['Nunito Sans']">
             Secure
           </span>
         </div>
         <div className="h-6 border-l border-slate-300" />
         <div className="flex items-center gap-2">
-          <img src={admin_panel} alt="" />
+          <img src={admin_panel} alt="" className="gap-1" />
           <span className="text-zinc-600 text-lg font-medium font-['Nunito Sans']">
             Control
           </span>
         </div>
         <div className="h-6 border-l border-slate-300" />
         <div className="flex items-center gap-2">
-          <img src={article_shortcut} alt="" />
+          <img src={article_shortcut} alt="" className="gap-1"/>
           <span className="text-zinc-600 text-lg font-medium font-['Nunito Sans']">
             Share
           </span>
@@ -40,16 +40,10 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Title */}
-      <h1 className="text-center font-['Nunito Sans'] font-bold text-3xl sm:text-2xl lg:text-5xl leading-snug tracking-tight text-gray-800">
-        Secure File Sharing & Document{" "}
-        <span className="text-slate-500">Management for Enterprises</span>
-      </h1>
+      <div className="self-stretch text-center justify-start"><span className="text-gray-800 text-4xl font-bold font-['Nunito Sans'] leading-[52px] tracking-tight">Secure File Sharing & Document <br/>Management </span><span className="text-slate-500 text-4xl font-bold font-['Nunito Sans'] leading-[52px] tracking-tight">for Enterprises</span></div>
 
       {/* Subtitle */}
-      <p className="text-center text-zinc-600 text-base sm:text-lg lg:text-xl font-normal font-['Nunito Sans'] leading-relaxed tracking-tight max-w-3xl">
-        Encrypt, control, and share documents seamlessly while ensuring
-        compliance and data protection
-      </p>
+      <div className="self-stretch text-center justify-start text-zinc-600 text-xl font-normal font-['Nunito Sans'] leading-relaxed tracking-tight">Encrypt, control, and share documents seamlessly while ensuring compliance and data protection</div>
 
       {/* CTA Button */}
       <button className="px-8 py-3 bg-gray-800 rounded-lg text-white text-lg sm:text-xl font-semibold font-['Nunito Sans'] hover:bg-gray-700 transition">
@@ -63,14 +57,6 @@ const HeroSection: React.FC = () => {
         src="https://placehold.co/948x599"
         alt="Hero"
       />
-
-      {/* Decorative Element */}
-      <div className="w-24 h-24 relative">
-        <div className="absolute inset-0 bg-black rounded-full opacity-10" />
-        <div className="absolute inset-2 border-4 border-slate-500 rounded-full" />
-        <div className="absolute left-8 top-8 w-7 h-8 bg-slate-500 rounded" />
-      </div>
-
       </div>
       </section>
   );
