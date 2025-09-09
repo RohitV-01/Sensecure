@@ -48,7 +48,7 @@ const EndToEndSecuritySection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full px-6 lg:px-24 py-16 bg-white flex flex-col items-center gap-16">
+    <section className="m-auto w-full px-6 lg:px-24 py-16 bg-white flex flex-col items-center gap-16">
       {/* Heading */}
       <div className="text-center flex flex-col gap-4">
       <div className="self-stretch text-center justify-start">
@@ -61,7 +61,7 @@ const EndToEndSecuritySection: React.FC = () => {
       </div>
 
       {/* Step Tabs */}
-      <div className="flex flex-wrap justify-center items-center gap-4 lg:gap-8">
+      <div className="m-auto flex flex-wrap justify-center items-center gap-4 lg:gap-8">
         {["Upload & Secure", "Control Access", "Safe Sharing", "Track Actions"].map(
           (step, i) => (
             <React.Fragment key={i}>
@@ -90,7 +90,7 @@ const EndToEndSecuritySection: React.FC = () => {
       </div>
 
       {/* Progress Bar */}
-      <div className="w-full  h-3 bg-slate-200 rounded-full relative">
+      <div className="m-auto w-full  h-3 bg-slate-200 rounded-full relative">
         <div
           className="absolute top-0.5 h-2.5 bg-slate-500 rounded-full transition-all duration-500"
           style={{
@@ -101,7 +101,7 @@ const EndToEndSecuritySection: React.FC = () => {
       </div>
 
       {/* Active Section */}
-      <div className="w-full flex flex-col lg:flex-row justify-between items-center gap-12 py-6">
+      <div className="m-auto w-full flex flex-col lg:flex-row justify-between items-center gap-12 py-6">
         {/* Left: Text */}
         <div className="flex-1 flex flex-col gap-6">
           <h3 className="text-gray-800 text-4xl font-bold font-['Nunito Sans'] leading-10 tracking-tight">

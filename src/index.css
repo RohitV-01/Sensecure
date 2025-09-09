@@ -34,7 +34,7 @@
 @layer components {
   /* Improve touch targets on mobile */
   button, a, input, select, textarea {
-    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+    @apply focus:outline-none ;
   }
 }
 

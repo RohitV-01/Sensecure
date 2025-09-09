@@ -6,7 +6,6 @@ import ContactModal from "components/ContactModal";
 import HeroSection from "components/HeroSection";
 import FeaturesSection from "components/FeaturesSection";
 import SolutionsSection from "components/SolutionsSection";
-import UploadSection from "components/UploadSection";
 import EndToEndSecuritySection from "components/EndToEndSecuritySection";
 
 const Dashboard = () => {

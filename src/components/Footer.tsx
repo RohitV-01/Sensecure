@@ -1,10 +1,32 @@
 // src/components/Footer.tsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import sensecurelogo from "../assets/Sensecure_Logo.png";
 import icon from "../assets/Icons1.svg"
+import ContactModal from "./ContactModal";
 
 const Footer: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const [isContactOpen, setIsContactOpen] = useState(false); 
+
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest("nav")) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("click", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   return (
+    <>
     <footer className="w-full bg-zinc-700 px-6 lg:px-20 py-12 flex flex-col gap-12">
       {/* Top Section */}
       <div className="flex flex-col lg:flex-row justify-between gap-12">
@@ -31,18 +53,19 @@ const Footer: React.FC = () => {
 
         {/* Right: Links */}
         <div className="flex flex-col sm:flex-row gap-6 sm:gap-20 items-start sm:items-end lg:items-start">
-          <a
-            href="#contact"
+          <button
+            onClick={() => setIsContactOpen(true)}
             className="text-slate-50 text-lg sm:text-xl font-normal font-['Nunito Sans'] hover:text-gray-300 transition"
           >
             Contact Us
-          </a>
-          <a
-            href="#demo"
-            className="text-slate-50 text-lg sm:text-xl font-normal font-['Nunito Sans'] hover:text-gray-300 transition"
-          >
-            Request Demo
-          </a>
+          </button>
+          <button
+          className="text-slate-50 text-lg sm:text-xl font-normal font-['Nunito Sans'] 
+                    hover:text-gray-300 transition 
+                    focus:outline-none focus:ring-0 focus:ring-slate-300 rounded"
+        >
+          Request Demo
+        </button>
         </div>
       </div>
 
@@ -50,7 +73,17 @@ const Footer: React.FC = () => {
       <div className="text-slate-50 text-sm font-normal font-['Nunito Sans'] tracking-tight">
         ©2025 Sensecure. All rights reserved.
       </div>
+
+      <ContactModal
+    open={isContactOpen}
+    onClose={() => setIsContactOpen(false)}
+    onSave={(contact) => {
+      console.log("Contact saved:", contact);
+      // setIsContactOpen(false);
+    }}
+    />
     </footer>
+    </>
   );
 };
 
