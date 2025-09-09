@@ -1,20 +1,14 @@
 // src/pages/Dashboard.tsx
-<<<<<<< Updated upstream
-=======
 import React from "react";
->>>>>>> Stashed changes
 import Navbar from "../components/navbar";
 import Footer from "components/Footer";
 import { useEffect, useState } from "react";
 import ContactModal from "components/ContactModal";
 import HeroSection from "components/HeroSection";
 import FeaturesSection from "components/FeaturesSection";
-<<<<<<< Updated upstream
 import SolutionsSection from "components/SolutionsSection";
 import EndToEndSecuritySection from "components/EndToEndSecuritySection";
-=======
 import CTASection from "../components/CTASection";
->>>>>>> Stashed changes
 
 const Dashboard = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,16 +42,13 @@ const Dashboard = () => {
       {/* Feature section  */}
       <FeaturesSection />
 
-<<<<<<< Updated upstream
       {/* End to End Security Section  */}
       <EndToEndSecuritySection/>
 
       {/* Solution Section  */}
       <SolutionsSection/>
       
-=======
       <CTASection /> 
->>>>>>> Stashed changes
 
       <Footer />
     </div>   
