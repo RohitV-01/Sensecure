@@ -4,6 +4,7 @@ import heroImage from "../assets/HerosectionBG.jpg"; // Replace with actual imag
 import admin_panel from "../assets/admin_panel_settings.svg";
 import article_shortcut from "../assets/article_shortcut.svg";
 import House_with_shield from "../assets/house_with_shield.svg";
+import senseure_animation from "../assets/Sensecure_Animation.mp4";
 
 const HeroSection: React.FC = () => {
   return (
@@ -52,10 +53,9 @@ const HeroSection: React.FC = () => {
       </div>
       <div className="w-full flex flex-col items-center gap-12 px-6 lg:px-24 py-16">
           {/* Hero Image */}
-      <img
-        className="w-full max-w-5xl rounded-3xl"
-        src="https://placehold.co/948x599"
-        alt="Hero"
+      <video
+        className="lg:w-[948px] lg:h-[599px] rounded-3xl"
+        src={senseure_animation}
       />
       </div>
       </section>
