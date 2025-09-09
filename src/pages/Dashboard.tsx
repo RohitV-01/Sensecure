@@ -1,5 +1,4 @@
 // src/pages/Dashboard.tsx
-import React from "react";
 import Navbar from "../components/navbar";
 import Footer from "components/Footer";
 import { useEffect, useState } from "react";
@@ -33,7 +32,7 @@ const Dashboard = () => {
 
   return (
     <>
-    <div className="min-h-screen flex flex-col">
+    <div className="m-auto min-h-screen flex flex-col">
       <Navbar />
       
       {/* Hero Video Section */}
