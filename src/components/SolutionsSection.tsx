@@ -28,11 +28,10 @@ type SolutionCardProps = {
 
 const SolutionCard: React.FC<SolutionCardProps> = ({ title, bgImage, features }) => {
   return (
-    <div className="w-[381px] h-[376px] rounded-xl shadow-md outline outline-1 outline-slate-200 flex flex-col overflow-hidden">
-      
-      {/* Header with fixed size image */}
+    <div className="w-full max-w-sm sm:max-w-md md:max-w-none rounded-xl shadow-md outline outline-1 outline-slate-200 flex flex-col overflow-hidden">
+      {/* Header with responsive aspect ratio */}
       <div
-        className="w-[381px] h-[174px] flex items-center justify-center text-center text-white text-xl font-bold font-['Nunito Sans'] leading-snug tracking-tight"
+        className="w-full aspect-[381/174] flex items-center justify-center text-center text-lg sm:text-xl font-bold font-['Nunito Sans'] leading-snug tracking-tight"
         style={{
           backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
@@ -42,12 +41,12 @@ const SolutionCard: React.FC<SolutionCardProps> = ({ title, bgImage, features })
         {title}
       </div>
 
-      {/* Features with fixed size */}
-      <div className="w-[381px] h-[202px] p-6 bg-slate-50 flex flex-col gap-4">
+      {/* Features area grows with content */}
+      <div className="w-full p-5 sm:p-6 bg-slate-50 flex flex-col gap-3 sm:gap-4">
         {features.map((feature, idx) => (
           <div key={idx} className="flex items-center gap-3">
-            <img src={feature.icon} alt="" className="w-6 h-6" />
-            <p className="flex-1 text-slate-500 text-sm font-normal font-['Nunito Sans'] leading-tight tracking-tight">
+            <img src={feature.icon} alt="" className="w-5 h-5 sm:w-6 sm:h-6" />
+            <p className="flex-1 text-slate-500 text-sm sm:text-base font-normal font-['Nunito Sans'] leading-tight tracking-tight">
               {feature.text}
             </p>
           </div>
@@ -59,21 +58,21 @@ const SolutionCard: React.FC<SolutionCardProps> = ({ title, bgImage, features })
 
 const SolutionsSection: React.FC = () => {
   return (
-    <section className="self-stretch p-20 bg-white flex flex-col items-center gap-16">
+    <section className="w-full px-6 sm:px-10 lg:px-20 py-12 sm:py-16 lg:py-20 bg-white flex flex-col items-center gap-10 sm:gap-14 lg:gap-16">
       {/* Heading */}
-      <div className="flex flex-col items-center gap-4 text-center">
-        <h2 className="text-gray-800 text-4xl font-bold font-['Nunito Sans'] leading-[52px] tracking-tight">
+      <div className="flex flex-col items-center gap-3 sm:gap-4 text-center">
+        <h2 className="text-gray-800 text-3xl sm:text-4xl font-bold font-['Nunito Sans'] leading-snug sm:leading-[52px] tracking-tight">
           Next-Level Security <br />
           <span className="text-slate-500">Meets Effortless Management</span>
         </h2>
-        <p className="text-zinc-600 text-xl font-normal font-['Nunito Sans'] leading-relaxed tracking-tight">
+        <p className="text-zinc-600 text-base sm:text-xl font-normal font-['Nunito Sans'] leading-relaxed tracking-tight">
           Sensecure is designed to deliver unmatched security, transparency, <br />
           and efficiency across all your document-sharing needs
         </p>
       </div>
 
-      {/* Cards in a row */}
-      <div className="w-full max-w-[1240px] flex flex-wrap justify-center lg:justify-between gap-6">
+      {/* Cards grid */}
+      <div className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         <SolutionCard
           title="Easy Integration with Popular Platforms"
           bgImage={EasyIntegration}

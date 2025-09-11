@@ -9,6 +9,15 @@
     @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
+  /* Hide scrollbar visually but keep scrollability */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
   .text-responsive-xl {
     @apply text-lg sm:text-xl lg:text-2xl;
   }
